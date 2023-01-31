@@ -9,6 +9,7 @@ import { LivroService } from './services/livro.service';
 import { HomeComponent } from './pages/home/home.component';
 import { IncluirLivroComponent } from './pages/livros/incluir-livro/incluir-livro.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AutorService } from './services/autor.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule
   ],
   providers: [
-    LivroService
+    LivroService,
+    AutorService
   ],
   bootstrap: [AppComponent]
 })

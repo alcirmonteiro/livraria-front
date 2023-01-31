@@ -8,11 +8,8 @@
             </div>
             <div class="form-group">
                 <label for="autor">Autor</label>
-                <select aria-label="Default select example" class="form-control" id="autor">
-                    <option selected>---</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                <select aria-label="Default select example" class="form-control" id="autor" formControlName="autor">
+                    <option *ngFor="let autor of autores" [value]="autor._id">{{autor.nome}}</option>
                 </select>
             </div>
             <div class="form-group">
@@ -24,5 +21,10 @@
                 <input type="text" class="form-control txt" autocomplete="off" id="numeroPaginas" formControlName="numeroPaginas" />
             </div>
         </div>
+        <div>
+            <button type="button" class="btn btn-primary" [disabled]="!form.valid" type="submit">Salvar</button>
+            <button class="btn btn-danger m-1" (click)=cancelar()>Cancelar</button>
+        </div>
     </div>
 </form>        
+
